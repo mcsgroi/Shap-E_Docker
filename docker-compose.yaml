@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  shap-e:
+    build:
+      context: .
+      args:
+        # specify which cuda version your card supports: https://developer.nvidia.com/cuda-gpus
+        TORCH_CUDA_ARCH_LIST: ${TORCH_CUDA_ARCH_LIST}
+    ports:
+      - "7860:7860"
+#    volumes:
+#      - ./characters:/app/characters
+#      - ./extensions:/app/extensions
+#      - ./loras:/app/loras
+#      - ./models:/app/models
+#      - ./presets:/app/presets
+#      - ./prompts:/app/prompts
+#      - ./softprompts:/app/softprompts
+#      - ./training:/app/training
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
