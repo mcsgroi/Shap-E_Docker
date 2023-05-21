@@ -25,4 +25,4 @@ with gr.Blocks(css='style.css') as demo:
             create_demo_text_to_3d(model)
         with gr.Tab(label='Image to 3D'):
             create_demo_image_to_3d(model)
-demo.queue(api_open=False, max_size=10).launch()
+demo.queue(api_open=False, max_size=10).launch(server_name="0.0.0.0", server_port=7860)
