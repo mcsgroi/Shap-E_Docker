@@ -6,7 +6,7 @@ RUN apt-get update && \
 RUN python3 -m venv /app/venv
 RUN . /app/venv/bin/activate && \
     pip3 install --upgrade pip setuptools && \
-    pip3 install torch torchvision torchaudio
+    pip3 install torch torchvision torchaudio pytorch3d
 
 WORKDIR /app
 COPY . .
