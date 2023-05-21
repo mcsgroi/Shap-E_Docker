@@ -1,3 +1,5 @@
+This is a modified version of https://huggingface.co/spaces/hysts/Shap-E/tree/main that wraps it in a Docker container.
+
 ---
 title: Shap-E
 emoji: 🧢
